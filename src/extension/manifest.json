@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Debug Snapshots",
+  "version": "1.0",
+  "description": "Real-Time Debug Snapshot for React Apps",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.highlight-line {
+    background-color: rgba(255, 255, 0, 0.3);
+}
+.highlight-line-margin {
+    border-left: 4px solid yellow;
+}

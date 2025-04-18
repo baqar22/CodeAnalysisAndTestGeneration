@@ -1,0 +1,16 @@
+<button id="toggle-overlay">Toggle Overlay</button>
+
+<script>
+    document.getElementById('toggle-overlay').addEventListener('click', () => {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            chrome.scripting.executeScript({
+                target: { tabId: tabs[0].id },
+                func: toggleOverlay
+            });
+        });
+    });
+
+    function toggleOverlay() {
+        window.postMessage({ type: 'show_snapshot', state: 'Sample State' }, '*');
+    }
+</script>
